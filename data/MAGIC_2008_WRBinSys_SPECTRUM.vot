@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 1.0.3
+     http://www.astropy.org/ -->
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.2">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="energy" datatype="double" name="energy" unit="Hz"/>
+   <FIELD ID="flux" datatype="double" name="flux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Denergy" datatype="long" name="Denergy" unit=""/>
+   <FIELD ID="Dflux" datatype="long" name="Dflux"/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>1.9343914796837848e+25</TD>
+      <TD>1.1279323017600002e-13</TD>
+      <TD>-999</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>4.8359786992094619e+25</TD>
+      <TD>1.9866989406000006e-13</TD>
+      <TD>-999</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.4507936097628387e+26</TD>
+      <TD>4.2105200128200005e-13</TD>
+      <TD>-999</TD>
+      <TD>-999</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>

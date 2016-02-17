@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 1.0.3
+     http://www.astropy.org/ -->
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.2">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="energy" datatype="double" name="energy" unit="Hz"/>
+   <FIELD ID="flux" datatype="double" name="flux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Dflux" datatype="double" name="Dflux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Denergy" datatype="long" name="Denergy" unit=""/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>1.5637717441337702e+25</TD>
+      <TD>8.7142892484434278e-11</TD>
+      <TD>2.7358989623498505e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>2.4426044811837071e+25</TD>
+      <TD>8.8285381591699342e-11</TD>
+      <TD>1.8435351366216853e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>3.812879045604708e+25</TD>
+      <TD>9.1844270692161277e-11</TD>
+      <TD>1.553973236774133e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>5.9621330588943693e+25</TD>
+      <TD>7.9142177205208111e-11</TD>
+      <TD>1.2799130582970175e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>9.3127650805351414e+25</TD>
+      <TD>7.5452547437423369e-11</TD>
+      <TD>1.1984677209833298e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.4546382128287104e+26</TD>
+      <TD>6.1959871024487772e-11</TD>
+      <TD>1.0221558007100893e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>2.2731493695740585e+26</TD>
+      <TD>5.3674616714707594e-11</TD>
+      <TD>1.0577650285995774e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>3.5506239207465796e+26</TD>
+      <TD>4.4956074973039646e-11</TD>
+      <TD>1.1221848859865151e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>5.5459970918273955e+26</TD>
+      <TD>3.2809579257661491e-11</TD>
+      <TD>1.2150316211038727e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>8.6627370036809013e+26</TD>
+      <TD>2.4943760435041112e-11</TD>
+      <TD>1.4127956555232721e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.3537137553655584e+27</TD>
+      <TD>1.4091489055424474e-11</TD>
+      <TD>1.3560589396846357e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>2.1144712364955972e+27</TD>
+      <TD>1.2044314969214914e-11</TD>
+      <TD>1.4355975902497819e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>3.3027558325185984e+27</TD>
+      <TD>7.3385086357882414e-12</TD>
+      <TD>1.3518404497196119e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>5.1588286371686861e+27</TD>
+      <TD>3.1637661262677368e-12</TD>
+      <TD>1.4490673281512957e-12</TD>
+      <TD>-999</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>

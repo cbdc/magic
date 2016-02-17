@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 1.0.3
+     http://www.astropy.org/ -->
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.2">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="energy" datatype="double" name="energy" unit="Hz"/>
+   <FIELD ID="flux" datatype="double" name="flux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Dflux" datatype="double" name="Dflux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Denergy" datatype="long" name="Denergy" unit=""/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>3.2442404902581636e+25</TD>
+      <TD>1.0976054680753878e-10</TD>
+      <TD>1.0151630556591681e-11</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>5.0213417627501605e+25</TD>
+      <TD>8.745866238212847e-11</TD>
+      <TD>3.2280157006271957e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>7.7718771876060315e+25</TD>
+      <TD>6.858517363718695e-11</TD>
+      <TD>2.6875170776908744e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.2029037596307113e+26</TD>
+      <TD>6.2183605462041162e-11</TD>
+      <TD>2.2390126593531514e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.8618058573980004e+26</TD>
+      <TD>4.5494295369366543e-11</TD>
+      <TD>2.3706245161944778e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>2.8816146274979423e+26</TD>
+      <TD>2.9684800666304898e-11</TD>
+      <TD>2.345407580451531e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>4.4600297151329186e+26</TD>
+      <TD>1.9290258158376429e-11</TD>
+      <TD>2.3295170946617975e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>6.8601984832310627e+26</TD>
+      <TD>6.1045503703671352e-12</TD>
+      <TD>2.5404739204680735e-12</TD>
+      <TD>-999</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>

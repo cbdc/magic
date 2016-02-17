@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 1.0.3
+     http://www.astropy.org/ -->
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.2">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="energy" datatype="double" name="energy" unit="Hz"/>
+   <FIELD ID="flux" datatype="double" name="flux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Denergy" datatype="double" name="Denergy" unit="Hz"/>
+   <FIELD ID="Dflux" datatype="double" name="Dflux" unit="erg.s-1.cm-2"/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>2.3632484887190295e+25</TD>
+      <TD>5.0133399854438852e-12</TD>
+      <TD>6.6088484903396519e+24</TD>
+      <TD>1.1695625155679727e-12</TD>
+     </TR>
+     <TR>
+      <TD>4.0625848057383889e+25</TD>
+      <TD>4.7004458876150151e-12</TD>
+      <TD>1.1361116398265799e+25</TD>
+      <TD>7.2561844394715798e-13</TD>
+     </TR>
+     <TR>
+      <TD>6.9839028183568417e+25</TD>
+      <TD>3.0306494271934373e-12</TD>
+      <TD>1.9530559394733838e+25</TD>
+      <TD>5.010311949453692e-13</TD>
+     </TR>
+     <TR>
+      <TD>1.2005824898550908e+26</TD>
+      <TD>2.793863861035636e-12</TD>
+      <TD>3.3574507516066578e+25</TD>
+      <TD>4.1781600755025052e-13</TD>
+     </TR>
+     <TR>
+      <TD>2.0638868993018662e+26</TD>
+      <TD>2.0692060585453819e-12</TD>
+      <TD>5.7716922177195007e+25</TD>
+      <TD>3.6140952762749287e-13</TD>
+     </TR>
+     <TR>
+      <TD>3.5479641324620142e+26</TD>
+      <TD>1.0067766614718458e-12</TD>
+      <TD>9.9219533172745585e+25</TD>
+      <TD>3.4832328948376642e-13</TD>
+     </TR>
+     <TR>
+      <TD>6.0992088751234611e+26</TD>
+      <TD>7.0067166140933897e-13</TD>
+      <TD>1.7056545231898765e+26</TD>
+      <TD>3.2167666539271426e-13</TD>
+     </TR>
+     <TR>
+      <TD>1.0485006317223516e+27</TD>
+      <TD>4.6815537630617882e-13</TD>
+      <TD>2.9321506049046814e+26</TD>
+      <TD>3.0715391056659633e-13</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>

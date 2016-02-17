@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Produced with astropy.io.votable version 1.0.3
+     http://www.astropy.org/ -->
+<VOTABLE version="1.2" xmlns="http://www.ivoa.net/xml/VOTable/v1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.ivoa.net/xml/VOTable/v1.2">
+ <RESOURCE type="results">
+  <TABLE>
+   <FIELD ID="energy" datatype="double" name="energy" unit="Hz"/>
+   <FIELD ID="flux" datatype="double" name="flux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Dflux" datatype="double" name="Dflux" unit="erg.s-1.cm-2"/>
+   <FIELD ID="Denergy" datatype="long" name="Denergy" unit=""/>
+   <DATA>
+    <TABLEDATA>
+     <TR>
+      <TD>2.0740134386980107e+25</TD>
+      <TD>1.9048025831183672e-13</TD>
+      <TD>5.1587293295450629e-14</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>3.3677272063424773e+25</TD>
+      <TD>4.0281647771809916e-13</TD>
+      <TD>8.9600310791605433e-14</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>5.468452173385572e+25</TD>
+      <TD>1.3315897587326267e-12</TD>
+      <TD>1.9468687141153873e-13</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>8.8795339287664624e+25</TD>
+      <TD>3.3613904970056627e-12</TD>
+      <TD>4.7664748003646753e-13</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.4418397952012524e+26</TD>
+      <TD>8.809511928577002e-12</TD>
+      <TD>1.4583850248269215e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>2.34122302373348e+26</TD>
+      <TD>2.8970975547059493e-11</TD>
+      <TD>4.4942676243727954e-12</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>3.8016353951290468e+26</TD>
+      <TD>8.9849126830174714e-11</TD>
+      <TD>1.5941331831446517e-11</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>6.1729817301799018e+26</TD>
+      <TD>1.3425419258401941e-10</TD>
+      <TD>5.1003415138150018e-11</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.0023557229744949e+27</TD>
+      <TD>6.050042555251561e-10</TD>
+      <TD>1.937488257390975e-10</TD>
+      <TD>-999</TD>
+     </TR>
+     <TR>
+      <TD>1.6276018269846361e+27</TD>
+      <TD>2.3492139044335144e-09</TD>
+      <TD>8.3333022553409897e-10</TD>
+      <TD>-999</TD>
+     </TR>
+    </TABLEDATA>
+   </DATA>
+  </TABLE>
+ </RESOURCE>
+</VOTABLE>
