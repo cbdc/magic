@@ -81,11 +81,15 @@
 
   <data id="import">
 
+    <property name="previewDir">previews</property>
+
     <sources pattern='data/*.fits' recurse="True" />
 
     <fitsProdGrammar hdu="1" qnd="False">
       <rowfilter procDef="//products#define">
         <bind name="table">"\schema.data"</bind>
+        <bind name="preview">\standardPreviewPath</bind>
+        <bind name="preview_mime">"image/png"</bind>
       </rowfilter>
       <rowfilter name="addSDM">
 				<code>
