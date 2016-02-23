@@ -48,6 +48,13 @@
       spectralUCD="em.freq"
       > //ssap#hcd
     </mixin>
+    <column name="ssa_reference"
+            type="text"
+            tablehead="Reference"/>
+    <column name="reference_doi"
+            type="text"
+            tablehead="DOI"
+            verbLevel="30"/>
   </table>
 
 
@@ -94,6 +101,7 @@
 
     <make table="main">
       <rowmaker idmaps="*">
+        <map key="reference_doi">@REFDOI</map>
         <apply name="fixMissingTelescop">
           <code>
             try:
@@ -129,7 +137,6 @@
         </apply>
         <apply procDef="//ssap#setMixcMeta" name="setMixcMeta">
           <bind name="instrument">@instrument</bind>
-          <bind name="reference">@REFPAPER</bind>
           <bind name="creator">@AUTHOR</bind>
           <bind name="reference">@REFPAPER</bind>
         </apply>
@@ -190,7 +197,14 @@
       </autoCols>
       <FEED source="//ssap#atomicCoords"/>
       <outputField original="ssa_specstart" displayHint="displayUnit=m"/>
-      <outputField original="ssa_specend" displayHint="displayUnit=m"/>   <!-- Bug: try to use 'Hz' -->
+      <outputField original="ssa_specend" displayHint="displayUnit=m"/>
+      <outputField original="ssa_reference" select="array[ssa_reference,reference_doi]">
+        <formatter><![CDATA[
+          lbl = data[0]
+          url = data[1]
+          yield T.a(href="%s"%url , target="_blank")["%s"%lbl]
+        ]]></formatter>
+      </outputField>
     </outputTable>
 
   </service>
