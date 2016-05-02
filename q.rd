@@ -12,7 +12,7 @@
     that the data is transformed and homogeneized in its flux units, to values
     in 'erg/(s.cm2)', and photon energy values in equivalent 'Hz' frequency values.
   </meta>
-  <meta name="creationDate">02-02-2016</meta>
+  <meta name="creationDate">2016-02-02T12:00:00Z</meta>
   <meta name="subject">Spectra</meta>
   <meta name="subject">VHE sources</meta>
   <meta name="subject">Gamma-ray emission</meta>
@@ -48,6 +48,16 @@
       spectralUCD="em.freq"
       > //ssap#hcd
     </mixin>
+    <column name="ssa_reference"
+            type="text"
+            tablehead="Reference"/>
+    <column name="reference_doi"
+            type="text"
+            tablehead="DOI"
+            verbLevel="30"/>
+    <column name="asdc_link"
+            type="text"
+            verbLevel="1"/>
   </table>
 
 
@@ -74,12 +84,20 @@
 
   <data id="import">
 
+<!--
+    <property name="previewDir">previews</property>
+-->
     <sources pattern='data/*.fits' recurse="True" />
 
     <fitsProdGrammar hdu="1" qnd="False">
       <rowfilter procDef="//products#define">
         <bind name="table">"\schema.data"</bind>
+<!--
+        <bind name="preview">\standardPreviewPath</bind>
+        <bind name="preview_mime">"image/png"</bind>
+-->
       </rowfilter>
+<!--
       <rowfilter name="addSDM">
 				<code>
 					yield row
@@ -90,10 +108,12 @@
 					yield row
 				</code>
 			</rowfilter>
+-->
     </fitsProdGrammar>
 
     <make table="main">
       <rowmaker idmaps="*">
+        <map key="reference_doi">@REFDOI</map>
         <apply name="fixMissingTelescop">
           <code>
             try:
@@ -129,7 +149,6 @@
         </apply>
         <apply procDef="//ssap#setMixcMeta" name="setMixcMeta">
           <bind name="instrument">@instrument</bind>
-          <bind name="reference">@REFPAPER</bind>
           <bind name="creator">@AUTHOR</bind>
           <bind name="reference">@REFPAPER</bind>
         </apply>
@@ -190,7 +209,14 @@
       </autoCols>
       <FEED source="//ssap#atomicCoords"/>
       <outputField original="ssa_specstart" displayHint="displayUnit=m"/>
-      <outputField original="ssa_specend" displayHint="displayUnit=m"/>   <!-- Bug: try to use 'Hz' -->
+      <outputField original="ssa_specend" displayHint="displayUnit=m"/>
+      <outputField original="ssa_reference" select="array[ssa_reference,reference_doi]">
+        <formatter><![CDATA[
+          lbl = data[0]
+          url = data[1]
+          yield T.a(href="%s"%url , target="_blank")["%s"%lbl]
+        ]]></formatter>
+      </outputField>
     </outputTable>
 
   </service>

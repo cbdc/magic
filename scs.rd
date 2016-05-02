@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <resource>
-  <schema>magic</schema>
+  <schema>magic_scs</schema>
   <meta name="title">MAGIC/PIC database of spectra and publications</meta>
   <meta name="description">None</meta>
   <meta name="facility">MAGIC</meta>
