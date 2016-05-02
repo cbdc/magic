@@ -12,7 +12,7 @@
     that the data is transformed and homogeneized in its flux units, to values
     in 'erg/(s.cm2)', and photon energy values in equivalent 'Hz' frequency values.
   </meta>
-  <meta name="creationDate">02-02-2016</meta>
+  <meta name="creationDate">2016-02-02T12:00:00Z</meta>
   <meta name="subject">Spectra</meta>
   <meta name="subject">VHE sources</meta>
   <meta name="subject">Gamma-ray emission</meta>
@@ -55,6 +55,9 @@
             type="text"
             tablehead="DOI"
             verbLevel="30"/>
+    <column name="asdc_link"
+            type="text"
+            verbLevel="1"/>
   </table>
 
 
@@ -81,16 +84,20 @@
 
   <data id="import">
 
+<!--
     <property name="previewDir">previews</property>
-
+-->
     <sources pattern='data/*.fits' recurse="True" />
 
     <fitsProdGrammar hdu="1" qnd="False">
       <rowfilter procDef="//products#define">
         <bind name="table">"\schema.data"</bind>
+<!--
         <bind name="preview">\standardPreviewPath</bind>
         <bind name="preview_mime">"image/png"</bind>
+-->
       </rowfilter>
+<!--
       <rowfilter name="addSDM">
 				<code>
 					yield row
@@ -101,6 +108,7 @@
 					yield row
 				</code>
 			</rowfilter>
+-->
     </fitsProdGrammar>
 
     <make table="main">
