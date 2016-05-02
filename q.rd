@@ -54,7 +54,7 @@
     <column name="reference_doi"
             type="text"
             tablehead="DOI"
-            verbLevel="30"/>
+            verbLevel="20"/>
     <column name="asdc_link"
             type="text"
             verbLevel="1"/>
