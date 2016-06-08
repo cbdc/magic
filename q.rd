@@ -51,9 +51,9 @@
     <column name="ssa_reference"
             type="text"
             tablehead="Reference"/>
-    <column name="reference_doi"
+    <column name="reference_url"
             type="text"
-            tablehead="DOI"
+            tablehead="Article"
             verbLevel="20"/>
     <column name="asdc_link"
             type="text"
@@ -68,7 +68,7 @@
       spectralDescription="Frequency"
       > //ssap#sdm-instance
     </mixin>
-    <column name="fluxerror"
+    <column name="flux_error"
             ucd="stat.error;phot.flux.density;em.freq">
       <values nullLiteral="-999"/>
     </column>
@@ -113,7 +113,7 @@
 
     <make table="main">
       <rowmaker idmaps="*">
-        <map key="reference_doi">@REFDOI</map>
+        <map key="reference_url">@REFURL</map>
         <apply name="fixMissingTelescop">
           <code>
             try:
@@ -136,7 +136,7 @@
         </apply>
         <apply procDef="//ssap#setMeta" name="setMeta">
           <bind name="pubDID">\standardPubDID</bind>
-          <bind name="dstitle">@OBJECT+'_'+@EXTNAME+'_'+@DATE</bind>
+          <bind name="dstitle">@OBJECT+'_'+@EXTNAME+'_'+@DATE_OBS</bind>
           <bind name="targname">@OBJECT</bind>
           <bind name="alpha">@RA</bind>
           <bind name="delta">@DEC</bind>
@@ -173,7 +173,7 @@
           self.sourceToken["accref"]).localpath
           hdu = pyfits.open(fitsPath)[1]
           for row in enumerate(hdu.data):
-            yield {"spectral": row[1][0], "flux": row[1][2], "fluxerror": row[1][3]}
+            yield {"spectral": row[1][0], "flux": row[1][2], "flux_error": row[1][3]}
         </code>
       </iterator>
     </embeddedGrammar>
@@ -210,7 +210,7 @@
       <FEED source="//ssap#atomicCoords"/>
       <outputField original="ssa_specstart" displayHint="displayUnit=m"/>
       <outputField original="ssa_specend" displayHint="displayUnit=m"/>
-      <outputField original="ssa_reference" select="array[ssa_reference,reference_doi]">
+      <outputField original="ssa_reference" select="array[ssa_reference,reference_url]">
         <formatter><![CDATA[
           lbl = data[0]
           url = data[1]
