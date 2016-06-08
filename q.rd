@@ -51,7 +51,7 @@
     <column name="ssa_reference"
             type="text"
             tablehead="Reference"/>
-    <column name="reference_url"
+    <column name="reference_doi"
             type="text"
             tablehead="Article"
             verbLevel="20"/>
@@ -113,7 +113,7 @@
 
     <make table="main">
       <rowmaker idmaps="*">
-        <map key="reference_url">@REFURL</map>
+        <map key="reference_doi">@REFURL</map>
         <apply name="fixMissingTelescop">
           <code>
             try:
@@ -210,7 +210,7 @@
       <FEED source="//ssap#atomicCoords"/>
       <outputField original="ssa_specstart" displayHint="displayUnit=m"/>
       <outputField original="ssa_specend" displayHint="displayUnit=m"/>
-      <outputField original="ssa_reference" select="array[ssa_reference,reference_url]">
+      <outputField original="ssa_reference" select="array[ssa_reference,reference_doi]">
         <formatter><![CDATA[
           lbl = data[0]
           url = data[1]
