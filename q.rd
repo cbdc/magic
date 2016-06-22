@@ -55,9 +55,26 @@
             type="text"
             tablehead="Article"
             verbLevel="20"/>
+    <column name="ebl_corrected"
+            type="smallint"
+            verbLevel="10"/>
     <column name="asdc_link"
             type="text"
             verbLevel="1"/>
+    <column name="ra_j2000"
+            type="double precision"
+            unit="deg" ucd="pos.eq.ra"
+            tablehead="RA_J2000"
+            verbLevel="20"
+            description="Right Ascension"
+            required="True"/>
+    <column name="dec_j2000"
+            type="double precision"
+            unit="deg" ucd="pos.eq.dec"
+            tablehead="DEC_J2000"
+            verbLevel="20"
+            description="Declination"
+            required="True"/>
   </table>
 
 
@@ -114,6 +131,8 @@
     <make table="main">
       <rowmaker idmaps="*">
         <map key="reference_doi">@REFURL</map>
+        <map key="dec_j2000">@DEC</map>
+        <map key="ra_j2000">@RA</map>
         <apply name="fixMissingTelescop">
           <code>
             try:
@@ -132,6 +151,10 @@
               @timeext = @TOBS
             except:
               @timeext = None
+            if @EBL_CORR == 'TRUE':
+              @ebl_corrected = 1
+            else:
+              @ebl_corrected = 0
           </code>
         </apply>
         <apply procDef="//ssap#setMeta" name="setMeta">
@@ -215,6 +238,14 @@
           lbl = data[0]
           url = data[1]
           yield T.a(href="%s"%url , target="_blank")["%s"%lbl]
+        ]]></formatter>
+      </outputField>
+      <outputField original="asdc_link" select="array[ra_j2000,dec_j2000]">
+        <formatter><![CDATA[
+          _ra = data[0]
+          _dec = data[1]
+          url = 'http://toolsdev.asdc.asi.it/SED/sed.jsp?&ra=%s&dec=%s' % (str(_ra),str(_dec))
+          yield T.a(href="%s"%url , target="_blank")["ASDC/SED tool"]
         ]]></formatter>
       </outputField>
     </outputTable>
