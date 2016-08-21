@@ -104,7 +104,7 @@
 <!--
     <property name="previewDir">previews</property>
 -->
-    <sources pattern='data/*.fits' recurse="True" />
+    <sources pattern='data/*.fits' recurse="False" />
 
     <fitsProdGrammar hdu="1" qnd="False">
       <rowfilter procDef="//products#define">
