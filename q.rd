@@ -39,7 +39,7 @@
   <!--  Table block    -->
   <!-- =============== -->
 
-  <table id="main" onDisk="True">
+  <table id="main" onDisk="True" adql="True">
     <mixin
       fluxCalibration="ABSOLUTE"
       fluxUnit="erg/(s.cm**2)"
