@@ -244,7 +244,7 @@
         <formatter><![CDATA[
           _ra = data[0]
           _dec = data[1]
-          url = 'http://toolsdev.asdc.asi.it/SED/sed.jsp?&ra=%s&dec=%s' % (str(_ra),str(_dec))
+          url = 'http://tools.asdc.asi.it/SED/sed.jsp?&ra=%s&dec=%s' % (str(_ra),str(_dec))
           yield T.a(href="%s"%url , target="_blank")["ASDC/SED tool"]
         ]]></formatter>
       </outputField>
