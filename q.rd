@@ -17,10 +17,10 @@
   <meta name="subject">VHE sources</meta>
   <meta name="subject">Gamma-ray emission</meta>
 
-  <meta name="creator.name">___</meta>
-  <meta name="contact.name">___</meta>
-  <meta name="contact.email">___</meta>
-  <meta name="instrument">___</meta>
+  <meta name="creator.name">Carlos Brandt</meta>
+  <meta name="contact.name">Carlos Brandt</meta>
+  <meta name="contact.email">carlos.brandt@icranet.org</meta>
+  <meta name="instrument">MAGIC</meta>
   <meta name="facility">MAGIC</meta>
 
   <meta name="source">
@@ -39,7 +39,7 @@
   <!--  Table block    -->
   <!-- =============== -->
 
-  <table id="main" onDisk="True">
+  <table id="main" onDisk="True" adql="True">
     <mixin
       fluxCalibration="ABSOLUTE"
       fluxUnit="erg/(s.cm**2)"
@@ -53,11 +53,28 @@
             tablehead="Reference"/>
     <column name="reference_doi"
             type="text"
-            tablehead="DOI"
+            tablehead="Article"
             verbLevel="20"/>
+    <column name="ebl_corrected"
+            type="smallint"
+            verbLevel="10"/>
     <column name="asdc_link"
             type="text"
             verbLevel="1"/>
+    <column name="ra_j2000"
+            type="double precision"
+            unit="deg" ucd="pos.eq.ra"
+            tablehead="RA_J2000"
+            verbLevel="20"
+            description="Right Ascension"
+            required="True"/>
+    <column name="dec_j2000"
+            type="double precision"
+            unit="deg" ucd="pos.eq.dec"
+            tablehead="DEC_J2000"
+            verbLevel="20"
+            description="Declination"
+            required="True"/>
   </table>
 
 
@@ -68,7 +85,7 @@
       spectralDescription="Frequency"
       > //ssap#sdm-instance
     </mixin>
-    <column name="fluxerror"
+    <column name="flux_error"
             ucd="stat.error;phot.flux.density;em.freq">
       <values nullLiteral="-999"/>
     </column>
@@ -87,7 +104,7 @@
 <!--
     <property name="previewDir">previews</property>
 -->
-    <sources pattern='data/*.fits' recurse="True" />
+    <sources pattern='data/*.fits' recurse="False" />
 
     <fitsProdGrammar hdu="1" qnd="False">
       <rowfilter procDef="//products#define">
@@ -113,7 +130,9 @@
 
     <make table="main">
       <rowmaker idmaps="*">
-        <map key="reference_doi">@REFDOI</map>
+        <map key="reference_doi">@REFURL</map>
+        <map key="dec_j2000">@DEC</map>
+        <map key="ra_j2000">@RA</map>
         <apply name="fixMissingTelescop">
           <code>
             try:
@@ -132,11 +151,15 @@
               @timeext = @TOBS
             except:
               @timeext = None
+            if @EBL_CORR == 'TRUE':
+              @ebl_corrected = 1
+            else:
+              @ebl_corrected = 0
           </code>
         </apply>
         <apply procDef="//ssap#setMeta" name="setMeta">
           <bind name="pubDID">\standardPubDID</bind>
-          <bind name="dstitle">@OBJECT+'_'+@EXTNAME+'_'+@DATE</bind>
+          <bind name="dstitle">@OBJECT+'_'+@EXTNAME+'_'+@DATE_OBS</bind>
           <bind name="targname">@OBJECT</bind>
           <bind name="alpha">@RA</bind>
           <bind name="delta">@DEC</bind>
@@ -173,7 +196,7 @@
           self.sourceToken["accref"]).localpath
           hdu = pyfits.open(fitsPath)[1]
           for row in enumerate(hdu.data):
-            yield {"spectral": row[1][0], "flux": row[1][2], "fluxerror": row[1][3]}
+            yield {"spectral": row[1][0], "flux": row[1][2], "flux_error": row[1][3]}
         </code>
       </iterator>
     </embeddedGrammar>
@@ -217,6 +240,14 @@
           yield T.a(href="%s"%url , target="_blank")["%s"%lbl]
         ]]></formatter>
       </outputField>
+      <outputField original="asdc_link" select="array[ra_j2000,dec_j2000]">
+        <formatter><![CDATA[
+          _ra = data[0]
+          _dec = data[1]
+          url = 'http://tools.asdc.asi.it/SED/sed.jsp?&ra=%s&dec=%s' % (str(_ra),str(_dec))
+          yield T.a(href="%s"%url , target="_blank")["ASDC/SED tool"]
+        ]]></formatter>
+      </outputField>
     </outputTable>
 
   </service>
@@ -224,7 +255,7 @@
   <service id="ssa" allowed="ssap.xml">
     <meta name="shortName">Magic SSAP</meta>
     <meta name="title">Magic Public Spectra SSAP Interface</meta>
-    <meta name="ssap.dataSource">observation</meta>
+    <meta name="ssap.dataSource">pointed</meta>
     <meta name="ssap.creationType">archival</meta>
     <meta name="ssap.testQuery">MAXREC=1</meta>
 
