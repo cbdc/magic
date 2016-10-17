@@ -17,10 +17,10 @@
   <meta name="subject">VHE sources</meta>
   <meta name="subject">Gamma-ray emission</meta>
 
-  <meta name="creator.name">___</meta>
-  <meta name="contact.name">___</meta>
-  <meta name="contact.email">___</meta>
-  <meta name="instrument">___</meta>
+  <meta name="creator.name">Carlos Brandt</meta>
+  <meta name="contact.name">Carlos Brandt</meta>
+  <meta name="contact.email">carlos.brandt@icranet.org</meta>
+  <meta name="instrument">MAGIC</meta>
   <meta name="facility">MAGIC</meta>
 
   <meta name="source">
@@ -255,7 +255,7 @@
   <service id="ssa" allowed="ssap.xml">
     <meta name="shortName">Magic SSAP</meta>
     <meta name="title">Magic Public Spectra SSAP Interface</meta>
-    <meta name="ssap.dataSource">observation</meta>
+    <meta name="ssap.dataSource">pointed</meta>
     <meta name="ssap.creationType">archival</meta>
     <meta name="ssap.testQuery">MAXREC=1</meta>
 
